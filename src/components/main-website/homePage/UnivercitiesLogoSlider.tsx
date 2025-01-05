@@ -1,3 +1,4 @@
+
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -37,7 +38,7 @@ const Card: React.FC<CardProps> = ({ logoUrl, cardHeight, cardWidth }) => {
 
 const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
   showHeading = true, 
-  cardHeight = "12rem", 
+  cardHeight = "10rem", 
   cardWidth = "auto", 
   paddingClass = "py-10"
 }) => {
@@ -45,7 +46,7 @@ const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
     { logoUrl: "./logo/Quantum_logo.png" },
     { logoUrl: "./logo/1631180032phpvUgTqj.jpeg" },
     { logoUrl: "./logo/images.png" },
-    { logoUrl: "./logo/products.png" },
+    { logoUrl: "./logo/sandip.png" },
     { logoUrl: "./logo/Slide80.jpeg" },
   ];
 
@@ -58,7 +59,6 @@ const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
     autoplaySpeed: 2000,
     pauseOnHover: true,
     dots: true,
-    arrows: false,
     
     appendDots: (dots: React.ReactNode) => (
       <div className="mt-4">
@@ -76,7 +76,7 @@ const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
       },
       {
         breakpoint: 640,
-        settings: { slidesToShow: 2 },
+        settings: { slidesToShow: 1 },
       },
     ],
   };

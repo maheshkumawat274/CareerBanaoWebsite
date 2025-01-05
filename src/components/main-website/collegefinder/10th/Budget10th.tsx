@@ -1,4 +1,5 @@
 
+
 import Budget from '../Budget'
 
 const Budget10th = () => {
@@ -17,5 +18,4 @@ const Budget10th = () => {
     </>
   )
 }
-
 export default Budget10th

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { TbMessageChatbot } from "react-icons/tb";
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<
@@ -66,68 +66,65 @@ const Chatbot: React.FC = () => {
     <div>
       {/* Chat Icon */}
       <div
-        className="fixed bottom-10 right-5 w-14 h-14 bg-[#A044D1] rounded-full flex flex-col items-center justify-center text-black text-sm font-bold cursor-pointer shadow-lg z-50 animate-bounce"
+        className="fixed bottom-10 right-5 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold cursor-pointer shadow-lg z-50"
         onClick={toggleChat}
       >
         <div className="relative">
-          <img
-            src="https://via.placeholder.com/50" // Replace with your image URL
-            alt="Chat Icon"
-            className="rounded-full w-12 h-12"
-          />
-          <span className="absolute top-0 left-0 h-12 right-0 bg-[#DC66B7] text-white text-xs rounded-full px-1 flex items-center  text-center">
-            Chat Now
+          
+          <TbMessageChatbot className="rounded-full w-10 h-10 border-2 border-white"/>
+          <span className="absolute top-0 left-0 h-6 w-6 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+            1
           </span>
         </div>
       </div>
 
       {/* Chatbot */}
       {isOpen && (
-        <div className="fixed bottom-24 right-5 w-80 bg-white border border-careerOrange rounded-md shadow-lg z-50">
+        <div className="fixed bottom-24 right-5 font-poppins w-80 max-w-full bg-white border border-gray-300 rounded-lg shadow-lg z-50">
           {/* Chat Header */}
-          <div className="flex justify-between items-center bg-careerOrange text-white px-4 py-2">
-            <div className="text-lg font-bold flex gap-2"> 
-              <img src="./logo/CBlogo.jpg" className="h-8 mt-4"></img> 
-              <h2 className="">CareerBanao Mentor</h2>
+          <div className="flex justify-between items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 rounded-t-lg">
+            <div className="text-lg font-bold flex items-center gap-2">
+              <img
+                src="./logo/CBlogo.jpg"
+                alt="CareerBanao"
+                className="h-8 w-8 rounded-full"
+              />
+              <h2 className="text-white">CareerBanao Mentor</h2>
             </div>
-            <button className="text-xl" onClick={toggleChat}>
+            <button className="text-2xl" onClick={toggleChat}>
               &times;
             </button>
           </div>
 
           {/* Chat Body */}
-          <div className="h-64 overflow-y-auto px-4 py-2 font-custom bg-gray-50">
+          <div className="h-64 overflow-y-auto px-4 py-2 bg-gray-50">
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`p-2 mb-2 max-w-[80%] rounded-md ${
+                className={`p-2 mb-2 max-w-[75%] rounded-lg shadow-md text-sm ${
                   message.sender === "user"
-                    ? "bg-green-100 ml-auto"
+                    ? "bg-purple-100 ml-auto"
                     : "bg-gray-200"
                 }`}
               >
-                {/* Render the message text with <br> tags */}
-                <p
-                  className="text-sm"
-                  dangerouslySetInnerHTML={{ __html: message.text }}
-                />
+                <p dangerouslySetInnerHTML={{ __html: message.text }} />
               </div>
             ))}
           </div>
 
           {/* Chat Footer */}
           {step < 4 && (
-            <div className="flex items-center px-4 py-2 bg-gray-50">
+            <div className="flex items-center px-4 py-2 bg-gray-100 rounded-b-lg">
               <input
                 type="text"
-                className="flex-grow border rounded-md p-2 text-sm"
+                className="flex-grow border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
                 placeholder="Type a message..."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
               />
               <button
-                className="ml-2 bg-careerOrange text-white px-4 py-2 rounded-md"
+                className="ml-2 bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600"
                 onClick={sendMessage}
               >
                 Send

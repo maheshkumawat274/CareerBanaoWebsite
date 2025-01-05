@@ -219,18 +219,75 @@ const customStyle = {
 const personIconPath = "M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z";
 const phoneIconPath = "M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z";
 const options = [
-    {
-        value: "Engineering",
-        label: "Engineering",
-    },
-    {
-        value: "Medical",
-        label: "Medical",
-    },
-    {
-        value: "Management",
-        label: "Management",
-    },
+    { value: "-- Select Stream --", label: "-- Select Stream --" },
+    { value: "Engineering", label: "Engineering" },
+    { value: "Management", label: "Management" },
+    { value: "Commerce and Banking", label: "Commerce and Banking" },
+    { value: "Medical", label: "Medical" },
+    { value: "Science", label: "Science" },
+    { value: "Hotel Management", label: "Hotel Management" },
+    { value: "Information Technology", label: "Information Technology" },
+    { value: "Arts & Humanities", label: "Arts & Humanities" },
+    { value: "Agriculture", label: "Agriculture" },
+    { value: "Law", label: "Law" },
+    { value: "Pharmacy", label: "Pharmacy" },
+    { value: "Education", label: "Education" },
+    { value: "Design", label: "Design" },
+    { value: "Media and Mass Combination", label: "Media and Mass Combination" },
+    { value: "Retail", label: "Retail" },
+    { value: "Vocational", label: "Vocational" },
+    { value: "Physical Education", label: "Physical Education" },
+    { value: "Paramedical", label: "Paramedical" },
+    { value: "Nursing", label: "Nursing" },
+    { value: "Dental", label: "Dental" },
+    { value: "Performing Arts", label: "Performing Arts" },
+    { value: "Others", label: "Others" },
+];
+
+const levelOptions = [
+    { value: "Undergraduate", label: "Undergraduate" },
+    { value: "Postgraduate", label: "Postgraduate" },
+    { value: "Diploma", label: "Diploma" },
+    { value: "Certificate", label: "Certificate" },
+    { value: "Doctorate", label: "Doctorate" },
+];
+const statesOptions = [
+    { value: "Andhra Pradesh", label: "Andhra Pradesh" },
+    { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
+    { value: "Assam", label: "Assam" },
+    { value: "Bihar", label: "Bihar" },
+    { value: "Chhattisgarh", label: "Chhattisgarh" },
+    { value: "Goa", label: "Goa" },
+    { value: "Gujarat", label: "Gujarat" },
+    { value: "Haryana", label: "Haryana" },
+    { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+    { value: "Jharkhand", label: "Jharkhand" },
+    { value: "Karnataka", label: "Karnataka" },
+    { value: "Kerala", label: "Kerala" },
+    { value: "Madhya Pradesh", label: "Madhya Pradesh" },
+    { value: "Maharashtra", label: "Maharashtra" },
+    { value: "Manipur", label: "Manipur" },
+    { value: "Meghalaya", label: "Meghalaya" },
+    { value: "Mizoram", label: "Mizoram" },
+    { value: "Nagaland", label: "Nagaland" },
+    { value: "Odisha", label: "Odisha" },
+    { value: "Punjab", label: "Punjab" },
+    { value: "Rajasthan", label: "Rajasthan" },
+    { value: "Sikkim", label: "Sikkim" },
+    { value: "Tamil Nadu", label: "Tamil Nadu" },
+    { value: "Telangana", label: "Telangana" },
+    { value: "Tripura", label: "Tripura" },
+    { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+    { value: "Uttarakhand", label: "Uttarakhand" },
+    { value: "West Bengal", label: "West Bengal" },
+    { value: "Andaman and Nicobar Islands", label: "Andaman and Nicobar Islands" },
+    { value: "Chandigarh", label: "Chandigarh" },
+    { value: "Dadra and Nagar Haveli and Daman and Diu", label: "Dadra and Nagar Haveli and Daman and Diu" },
+    { value: "Delhi", label: "Delhi" },
+    { value: "Jammu and Kashmir", label: "Jammu and Kashmir" },
+    { value: "Ladakh", label: "Ladakh" },
+    { value: "Lakshadweep", label: "Lakshadweep" },
+    { value: "Puducherry", label: "Puducherry" }
 ];
 
 function HomePopUp() {
@@ -256,9 +313,12 @@ function HomePopUp() {
             name: values.name,
             email: values.email,
             phone: values.phone,
-            address: values.address,
+            // address: values.address,
+            state: values.state,
             course_query: values.interest,
+            level: values.level,
             category: "Home-popup",
+
         };
         try {
             const response = await axios.post(`${BaseUrl}userQueryAPI`, JSON.stringify(payload));
@@ -296,7 +356,8 @@ function HomePopUp() {
             >
                 <div className="popup-content flex flex-col-reverse lg:flex-row">
                     {/* Left Content Section */}
-                    <div className="popup-left-content bg-[#983fd4] p-5 flex flex-col justify-center items-center rounded-l-lg">
+                    <div className="popup-left-content bg-[#983fd4] p-5 justify-center items-center rounded-l-lg hidden md:flex">
+
                       <div className="why-register font-poppins mt-4 p-4 rounded-lg text-sm text-white">
                         <h1 className="font-semibold text-white text-2xl mb-2">Why register with us?</h1>
                         <ul className="list-disc pl-5 space-y-4">
@@ -367,13 +428,26 @@ function HomePopUp() {
                                             label={"Email Address"}
                                             prefix={<Icon path={""} />}
                                         />
-                                        <MyInput
+                                        {/* <MyInput
                                             name="address"
                                             type="text"
                                             label={"Address"}
                                             prefix={<Icon path={""} />}
                                             pattern={/^[0-9A-Za-z\s,'-]+$/}
+                                        /> */}
+
+                                        <MyInput
+                                            name="state"
+                                            label="State"
+                                            select={true}
+                                            options={statesOptions}
                                         />
+                                        <MyInput
+                                             name="level"
+                                             label="Select Level"
+                                             select={true}
+                                             options={levelOptions}
+                                         />
                                     </div>
                                 </div>
                             </MyForm>
@@ -384,7 +458,7 @@ function HomePopUp() {
                                             onChange={validateHandler}
                                             checked={isCheck}
                                         />{" "}
-                                        By submitting this form, you accept and agree to
+                                        By submitting this form, you accept <br/> and agree to
                                         our{" "}
                                         <Link
                                             to={"/terms-and-conditions"}

@@ -1,11 +1,23 @@
 
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import UnivercitiesLogoSlider from "./UnivercitiesLogoSlider";
+import { ContactForm } from "./Section5";
 
 const Meeting: React.FC = () => {
+
+  const [showForm, setShowForm] = useState(false);
+
+  const hideForm = () => {
+    setShowForm(false);
+  };
+
+  const submitHandler = (values:any) => {
+    console.log("Form Submitted", values);
+    // Handle form submission here, like making an API call
+  };
 
   const sliderData = [
     "Which University aligns with my career goals? Ask Our Expert Counsellors.",
@@ -32,7 +44,6 @@ const Meeting: React.FC = () => {
           slidesToScroll={1}
           autoplay={true}
           autoplaySpeed={3000}
-          arrows={false}
         >
            {sliderData.map((text, index) => (
           <div key={index} className="p-5 bg-[#1F618D] rounded-md">
@@ -54,9 +65,17 @@ const Meeting: React.FC = () => {
           <p className="text-lg text-gray-700">
            Try our Video Counselling for free!
           </p>
-          <button className="px-5 py-3 bg-orange-500 text-white rounded-lg shadow-md hover:bg-orange-600">
+          <div>
+           <button onClick={() => setShowForm(true)} className="px-5 py-3 bg-orange-500 text-white rounded-lg shadow-md hover:bg-orange-600">
             BOOK NOW
-          </button>
+           </button>
+           <ContactForm
+            showForm={showForm}
+            hideForm={hideForm}
+            submitHandler={submitHandler}
+            referFriend={false} 
+           />
+          </div>
           <div className=" px-5" style={{overflow: "hidden"  }}>
         <div className="w-full">
           <UnivercitiesLogoSlider 

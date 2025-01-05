@@ -34,6 +34,8 @@ export type contactData = {
   name: string;
   phone: string;
   email: string;
+  state: string;
+  stream: string;
   category: string;
 };
 
@@ -59,6 +61,8 @@ const Section5 = () => {
       name: payload.Name,
       phone: payload.Phone,
       email: payload.Email,
+      state: payload.state,
+      stream: payload.stream,
       category: queryCategory == 1 ? "video/voice" : "face-session",
     };
     payload = JSON.stringify(payload);
@@ -198,6 +202,25 @@ export const ContactForm = ({
   const [contactForm] = Form.useForm();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
+
+    // State options
+    const stateOptions = [
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+      "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+      "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+      "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
+      "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+      "West Bengal", "Delhi", "Puducherry", "Jammu and Kashmir", "Ladakh",
+    ];
+  
+    // Stream options
+    const streamOptions = [
+      "Science", "Commerce", "Arts", "Engineering", "Medical",
+      "Law", "Management", "Education", "Other",
+    ];
+  
+
+
   const validateHandler = async () => {
     const values = await contactForm.validateFields();
     // if(contactForm.isFieldsValidating()){
@@ -227,31 +250,70 @@ export const ContactForm = ({
       submitHandler={validateHandler}
     >
       <MyRow>
-        <MyCol style={{ marginBottom: "30px", margin: "0 auto" }}>
-          <MyText variant="title" level={4} style={{ fontWeight: "630" }}>
+        {/* Title Section */}
+        <MyCol className="text-center flex justify-center font-poppins w-full mb-4">
+          <MyText variant="title" level={4} style={{fontWeight:'700'}}>
             {referFriend
               ? "Refer a Friend, Win Up to ₹1000 Paytm Cashback!"
               : "Shape Your Dreams: Submit Your Details Now."}
           </MyText>
         </MyCol>
-        <MyCol span={isSmallScreen ? 24 : 14}>
+      
+        {/* Image Section */}
+        <MyCol span={isSmallScreen ? 24 : 14} className="flex justify-center items-center">
           <img
             src={`/icons/home/voicecall.png`}
             alt="contactForm"
-            style={{
-              objectFit: "cover",
-              width: "300px",
-              height: "200px",
-            }}
+            className="object-cover w-full max-w-[300px] h-auto rounded-xl shadow-lg"
           />
         </MyCol>
-        <MyCol span={isSmallScreen ? 24 : 10}>
-          <MyForm form={contactForm} >
-            <FormInput name="Name" required={true} type="text" pattern={/^[a-zA-Z\s]*$/}/>
-            <FormInput name="Phone" required={true} type="tel" max={10} pattern={/^[0-9]{10}$/} />
-            <FormInput name="Email" required={true} type="email" />
-            {/* {/* {showMessage && <Alert message="Successfully send" type="success" showIcon />} */}
-            {/* { showErrorMessage && <Alert message="Try after Some time" type="error" showIcon />} */}
+      
+        {/* Form Section */}
+        <MyCol span={isSmallScreen ? 24 : 10} className="bg-purple-50 p-6 rounded-xl shadow-xl mt-2">
+          <MyForm form={contactForm}>
+            <FormInput
+              name="Name"
+              required={true}
+              type="text"
+              pattern={/^[a-zA-Z\s]*$/}
+              
+            />
+            <FormInput
+              name="Phone"
+              required={true}
+              type="tel"
+              max={10}
+              pattern={/^[0-9]{10}$/}
+              
+            />
+            <FormInput
+              name="Email"
+              required={true}
+              type="email"
+              
+            />
+             {/* State Dropdown */}
+             <FormInput
+              name="state"
+              required={true}
+              type="select"
+              options={stateOptions.map((state) => ({
+                value: state,
+                label: state,
+              }))}
+            />
+
+            {/* Stream Dropdown */}
+            <FormInput
+              name="stream"
+              required={true}
+              type="select"
+              options={streamOptions.map((stream) => ({
+                value: stream,
+                label: stream,
+              }))}
+              
+            />
           </MyForm>
         </MyCol>
       </MyRow>

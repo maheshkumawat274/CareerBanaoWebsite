@@ -1,4 +1,5 @@
 
+
 import RegularMode from 'src/components/main-website/collegefinder/graduation/RegularMode'
 
 const RegularModePage = () => {

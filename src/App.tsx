@@ -15,6 +15,7 @@ import Chatbot from "./components/chatbot/Chatbot";
 import WhatsAppBtn from "./components/whatsappbtn/WhatsAppBtn";
 import CollegeFoundRoutes from "./routes/CollegeFoundRoutes";
 import MainLayoutVideo from "./components/main-website/collegefinder/MainLayoutVideo";
+import LandingPages from "./pages/landingpage/LandingPages";
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const dispatch = useDispatch();
@@ -82,6 +83,7 @@ function App() {
           ))
         }
         </Route>
+        <Route path={'/UniversityLandingPage'} element={<LandingPages/>}/>
       </Routes>
       <Chatbot/>
       <WhatsAppBtn/>

@@ -34,7 +34,6 @@ const Footer = () => {
             
             <div className="footer-content-column">
               <div className="footer-logo flex gap-2">
-              <img src="./logo/Untitled design (1).png" className="h-[50px] mt-2"></img>
                 <Link to={"/"} className="footer-logo-link">
                   <h2 className="footer-logo text-white">CareerBanao</h2>
                 </Link>
