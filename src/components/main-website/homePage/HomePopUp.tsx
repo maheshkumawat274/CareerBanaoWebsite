@@ -203,7 +203,6 @@
 //         </svg>
 //     );
 // }
-
 import { useState, useEffect } from "react";
 import default_img from "../../../assets/defaultCardLogo.jpeg";
 import { Link } from "react-router-dom";
@@ -288,7 +287,7 @@ const statesOptions = [
     { value: "Jammu and Kashmir", label: "Jammu and Kashmir" },
     { value: "Ladakh", label: "Ladakh" },
     { value: "Lakshadweep", label: "Lakshadweep" },
-    { value: "Puducherry", label: "Puducherry" },
+    { value: "Puducherry", label: "Puducherry" }
 ];
 
 function HomePopUp() {
@@ -358,6 +357,7 @@ function HomePopUp() {
                 <div className="popup-content flex flex-col-reverse lg:flex-row">
                     {/* Left Content Section */}
                     <div className="popup-left-content bg-[#983fd4] p-5 justify-center items-center rounded-l-lg hidden md:flex">
+
                       <div className="why-register font-poppins mt-4 p-4 rounded-lg text-sm text-white">
                         <h1 className="font-semibold text-white text-2xl mb-2">Why register with us?</h1>
                         <ul className="list-disc pl-5 space-y-4">
@@ -420,7 +420,6 @@ function HomePopUp() {
                                             select={true}
                                             options={options}
                                         />
-                                        
                                     </div>
                                     <div className="popup-form-right w-full lg:w-2/4">
                                         <MyInput

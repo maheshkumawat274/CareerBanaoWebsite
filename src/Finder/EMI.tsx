@@ -1,28 +1,35 @@
-
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
-const EMI = () => {
+interface EMIProps {
+  onButtonClick: (param: string) => void;
+  EMI_data: (param: string) => void;
+  data: string;
+}
+
+const EMI: React.FC<EMIProps> = ({
+  onButtonClick,
+  data,
+  EMI_data
+}) => {
+  const bhandleClick = () => {
+    onButtonClick(data); // Access onButtonClick and data directly
+  };
   const [selectedEMI, setSelectedEMI] = useState<string | null>(null);
   const [canProceed, setCanProceed] = useState<boolean>(false);
 
   // Array of education EMIs
   const EmployQue = [
-    { label: "Yes", path: "/formsub" },
-    { label: "No", path: "/formsub" }
+    { label: "Yes"},
+    { label: "No" }
   ];
 
   // Handle button click to set selected education EMI
   const handleSelection = (EMI: string) => {
     setSelectedEMI(EMI);
-    setCanProceed(true); // Enable the "Next" button when an option is selected
+    EMI_data(EMI);
   };
 
-  // Find the path corresponding to the selected EMI
-  const selectedPath = EmployQue.find(
-    (EMI) => EMI.label === selectedEMI
-  )?.path;
-
+ 
   return (
     <div className="bg-[#EDEDE9] font-poppins p-10 flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-gray-800 mb-6">
@@ -33,21 +40,19 @@ const EMI = () => {
           <button
             key={index}
             onClick={() => handleSelection(EMI.label)}
-            className={`${
-              selectedEMI === EMI.label ? "bg-[#F89A00] text-white" : "bg-white text-gray-800"
-            } border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
+            className="bg-white text-gray-800
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
           >
             {EMI.label}
           </button>
         ))}
       </div>
-      <div className="mt-5 flex gap-2">
-        <Link to="/budget">
-          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
+      <div className="mt-5 flex gap-2">\
+          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          onClick={bhandleClick}
+          >
             PREV
           </button>
-        </Link>
-        <Link to={selectedPath || "#"}>
           <button
             className={`${
               canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"
@@ -56,7 +61,6 @@ const EMI = () => {
           >
             Next
           </button>
-        </Link>
       </div>
     </div>
   );

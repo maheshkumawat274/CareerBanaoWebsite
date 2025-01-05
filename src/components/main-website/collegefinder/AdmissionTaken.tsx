@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -7,8 +8,8 @@ const AdmissionTaken = () => {
 
   // Array of education levels
   const AddTaken = [
-    { label: "Yes", path: "/CollegeFinder/Reff" },
-    { label: "No", path: "/CollegeFinder/thanku" }
+    { label: "Yes", path: "/Reff" },
+    { label: "No", path: "/CollegeFinder" }
   ];
 
   // Handle button click to set selected education level

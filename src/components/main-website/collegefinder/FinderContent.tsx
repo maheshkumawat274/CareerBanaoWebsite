@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -29,7 +30,7 @@ const FinderContent: React.FC = () => {
               href="#"
               className="text-blue-500 hover:text-blue-700 font-medium"
             >
-              <Link to={'/CollegeFinder'}>Find College</Link>
+              <Link to={'/CollegeFinder'}>Learn More</Link>
             </a>
           </div>
 
@@ -54,7 +55,7 @@ const FinderContent: React.FC = () => {
               href="#"
               className="text-blue-500 hover:text-blue-700 font-medium"
             >
-              <Link to={'/CollegeFinder'}>Find College</Link>
+              <Link to={'/CollegeFinder'}>Learn More</Link>
             </a>
           </div>
         </div>

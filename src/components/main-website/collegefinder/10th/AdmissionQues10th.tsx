@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -7,8 +8,8 @@ const AdmissionQues10th = () => {
 
   // Array of education levels
   const EmployQue = [
-    { label: "Yes", path: "/CollegeFinder/course10th" },
-    { label: "No", path: "/CollegeFinder/adtaken" }
+    { label: "Yes", path: "/course10th" },
+    { label: "No", path: "/adtaken" }
   ];
 
   // Handle button click to set selected education level
@@ -41,7 +42,7 @@ const AdmissionQues10th = () => {
         ))}
       </div>
       <div className="mt-5 flex gap-2">
-        <Link to="/CollegeFinder/score10th">
+        <Link to="/score10th">
           <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
             PREV
           </button>

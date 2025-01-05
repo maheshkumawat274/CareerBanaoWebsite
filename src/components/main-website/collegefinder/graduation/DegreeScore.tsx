@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -42,7 +43,7 @@ const DegreeScore = () => {
             PREV
           </button>
         </Link>
-        <Link to="/CollegeFinder/degreequs">
+        <Link to="/degreequs">
           <button
             className={`${
               canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"

@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { MapPinIcon, BuildingOffice2Icon } from "@heroicons/react/24/solid";
 import defaultLogo from "../../../assets/defaultCardLogo.jpeg";
@@ -159,5 +160,6 @@ function ExamCard({ data, isLoading }: ExamCardType) {
     </motion.div>
   );
 }
+
 
 export default ExamCard;

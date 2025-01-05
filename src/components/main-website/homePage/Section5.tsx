@@ -82,8 +82,6 @@ const Section5 = () => {
     }
   };
 
-  
-
   return (
     <div className="flex flex-col lg:flex-row mt-[5rem] gap-4">
       {items.map((item, index) => (
@@ -204,6 +202,7 @@ export const ContactForm = ({
   const [contactForm] = Form.useForm();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
+
     // State options
     const stateOptions = [
       "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
@@ -318,7 +317,6 @@ export const ContactForm = ({
           </MyForm>
         </MyCol>
       </MyRow>
-
     </MyModal>
   );
 };

@@ -61,6 +61,7 @@ const Section1 = () => {
     <div className="section1 font-poppins flex pb-[5rem]">
       {/* Section Container */}
       <div className="section-container font-popins relative top-[20px] flex flex-col lg:flex-row items-center justify-center">
+
         {/* Left Section */}
         <div className="section-left flex flex-col p-5 gap-6 justify-center w-full lg:w-[60%] text-center lg:text-left">
           <h1 className="text-[2rem] lg:text-[3.2rem] font-bold leading-[1.2] text-blue-900">
@@ -73,13 +74,14 @@ const Section1 = () => {
           </p>
           <div className="mt-6">
             {/* <Link to={data ? (data as any)[0]?.whatsApp_link : ""} target="_blank">
+
+            <Link to={data ? (data as any)[0]?.whatsApp_link : ""} target="_blank">
               <button
                 type="button"
                 className="bg-primaryBtn hover:bg-hoverBtn transition-all duration-300 ease-in-out transform hover:scale-105 btn-shadow rounded-3xl h-[3rem] w-[12rem] text-white text-[16px] font-semibold shadow-lg"
               >
                 CHAT NOW
               </button>
-            </Link> */}
 
             {/*contact form add*/}
             <button

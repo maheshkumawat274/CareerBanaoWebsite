@@ -1,3 +1,4 @@
+
 import Thanku from "src/components/main-website/collegefinder/Thanku"
 
 const ThankuPage = () => {

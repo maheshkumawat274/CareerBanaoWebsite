@@ -1,30 +1,40 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const OnlineMode = () => {
+
+interface RegularModeProps {
+  onButtonClick: (param: string) => void;
+  RegularMode_data: (param: string) => void;
+  data: string;
+}
+
+const RegularMode: React.FC<RegularModeProps> = ({
+  onButtonClick,
+  data,
+  RegularMode_data
+}) => {
+  const bhandleClick = () => {
+    onButtonClick(data); // Access onButtonClick and data directly
+  };
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [canProceed, setCanProceed] = useState<boolean>(false);
 
   // Array of education levels
   const educationLevels = [
-    { label: "Online BCA", path: "/budget" },
-    { label: "Online BBA", path: "/budget" },
-    { label: "Online BA", path: "/budget" },
-    { label: "Online B.Com", path: "/budget" },
-    { label: "Other", path: "/budget" }
+    { label: "Engineering", },
+    { label: "Management",  },
+    { label: "Law", },
+    { label: "Medical",},
+    { label: "Other", }
   ];
 
   // Handle button click to set selected education level
   const handleSelection = (level: string) => {
     setSelectedLevel(level);
-    setCanProceed(true); // Enable the "Next" button when an option is selected
+     // Enable the "Next" button when an option is selected
+    RegularMode_data(level);
   };
 
-  // Find the path corresponding to the selected level
-  const selectedPath = educationLevels.find(
-    (level) => level.label === selectedLevel
-  )?.path;
 
   return (
     <div className="bg-[#EDEDE9] font-poppins p-10 flex flex-col items-center justify-center">
@@ -36,21 +46,20 @@ const OnlineMode = () => {
           <button
             key={index}
             onClick={() => handleSelection(level.label)}
-            className={`${
-              selectedLevel === level.label ? "bg-[#F89A00] text-white" : "bg-white text-gray-800"
-            } border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
+            className="bg-white text-gray-800
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
           >
             {level.label}
           </button>
         ))}
       </div>
       <div className="mt-5 flex gap-2">
-        <Link to="/mode">
-          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
+          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          onClick={bhandleClick}
+          >
             PREV
           </button>
-        </Link>
-        <Link to={selectedPath || "#"}>
+          
           <button
             className={`${
               canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"
@@ -59,10 +68,9 @@ const OnlineMode = () => {
           >
             Next
           </button>
-        </Link>
       </div>
     </div>
   );
 };
 
-export default OnlineMode;
+export default RegularMode;

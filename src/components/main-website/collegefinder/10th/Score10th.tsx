@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -15,7 +16,7 @@ const Score10th = () => {
   // Handle button click to set selected score10th range
   const handleSelection = (score10th: string) => {
     setSelectedScore10th(score10th);
-    setCanProceed(true); 
+    setCanProceed(true); // Enable the "Next" button when an option is selected
   };
 
   return (
@@ -42,7 +43,7 @@ const Score10th = () => {
             PREV
           </button>
         </Link>
-        <Link to="/CollegeFinder/question10th">
+        <Link to="/question10th">
           <button
             className={`${
               canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"

@@ -1,35 +1,25 @@
-@media (max-width:1148px) and (min-width:1000px){
-  .header-section h1{
-    font-size: 25px;
-    font-weight: 600;
-    padding-top: 8px;
-  }
-  .nav-header{
-    gap: 5px;
+
+@media (max-width:1101px) and (min-width:1040px){
+  .header-section{
+    h1{
+      font-size: 20px;
+      font-weight: 700;
+      padding-top: 8px;
+    }
   }
 }
 
 @media (max-width:1040px) and (min-width:769px){
-    
-    .header-section h1{
-      font-size: 18px;
-      font-weight: 600;
-      padding-top: 8px;
+    .nav-header{
+      p{
+        font-size: 10px;
+      }
     }
-}
-@media (min-width: 768px) and (max-width: 1000px) {
-  .nav-header {
-    gap: 2px; 
-  }
-  .nav-header p{
-    font-size: 15px;
-  }
-}
-@media (min-width: 768px) and (max-width: 842px) {
-  .nav-header {
-    gap: 0px; 
-  }
-  .nav-header p{
-    font-size: 13px;
-  }
+    .header-section{
+      h1{
+        font-size: 20px;
+        font-weight: 700;
+        padding-top: 8px;
+      }
+    }
 }

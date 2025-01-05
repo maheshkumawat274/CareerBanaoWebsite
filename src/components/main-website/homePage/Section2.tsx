@@ -29,6 +29,7 @@
 // };
 
 // export default Section2;
+
 import "./home.css";
 
 const Section2 = () => {

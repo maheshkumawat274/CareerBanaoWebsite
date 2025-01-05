@@ -1,4 +1,5 @@
 
+
 import OnlineMode from 'src/components/main-website/collegefinder/graduation/OnlineMode'
 
 const OnlineModePage = () => {
