@@ -14,11 +14,6 @@ const mainRoutes = [
     path:"/",
     element:HomePage,
   },
-  {
-    path: "/admissions",
-    element: Admissions,
-  },
-  
   
   {
     path:"/admissions/:category",
@@ -34,11 +29,11 @@ const mainRoutes = [
   },
   {
     path:"/counselling/:category",
-    element:Counselling,
+    element:Counselling
   },
   {
     path:"/counselling/:category/apply/:college",
-    element:CounselingLayout,
+    element:CounselingLayout
   },
   {
     path:"/contact",
@@ -69,4 +64,3 @@ const mainRoutes = [
 
 
 export default mainRoutes;
-

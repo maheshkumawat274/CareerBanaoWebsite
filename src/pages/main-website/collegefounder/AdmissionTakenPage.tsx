@@ -1,3 +1,4 @@
+
 import AdmissionTaken from 'src/components/main-website/collegefinder/AdmissionTaken'
 const AdmissionTakenPage = () => {
   return (
@@ -8,5 +9,4 @@ const AdmissionTakenPage = () => {
     </>
   )
 }
-
 export default AdmissionTakenPage

@@ -1,4 +1,5 @@
 
+
 import AdmissionQues12th from 'src/components/main-website/collegefinder/12th/AdmissionQues12th'
 
 const AdmissionQues12thPage = () => {
@@ -10,5 +11,4 @@ const AdmissionQues12thPage = () => {
     </>
   )
 }
-
 export default AdmissionQues12thPage

@@ -1,4 +1,5 @@
 
+
 import BudgetDiploma from 'src/components/main-website/collegefinder/diplomaholder/BudgetDiploma'
 const BudgetDiplomaPage = () => {
   return (
