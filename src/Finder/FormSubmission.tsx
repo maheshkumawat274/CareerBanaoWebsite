@@ -1,6 +1,7 @@
 import { useState } from "react";
 interface FormSubmissionProps {
   onButtonClick: (param: string) => void;
+  Form_sub: (param: string) => void;
   data: string;
   showHeader?: boolean;
   showCourse?: boolean;
@@ -9,6 +10,7 @@ interface FormSubmissionProps {
 
 const FormSubmission: React.FC<FormSubmissionProps> = ({
   onButtonClick,
+  Form_sub,
   data,
   showHeader = true,
   showCourse = true,
@@ -59,6 +61,8 @@ const FormSubmission: React.FC<FormSubmissionProps> = ({
       if (validateForm()) {
         alert("Form submitted successfully!");
         console.log(formData);
+        const jsonData = JSON.stringify(formData);
+        Form_sub(jsonData);
       }
     };
 

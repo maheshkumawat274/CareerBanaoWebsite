@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface ModeProps {
   onButtonClick: (param: string) => void;
   Mode_data: (param: string) => void;
@@ -15,9 +13,6 @@ const Mode: React.FC<ModeProps> = ({
     onButtonClick(data); // Access onButtonClick and data directly
   };
 
-  const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
-  const [canProceed, setCanProceed] = useState<boolean>(false);
-
   // Array of education levels
   const EmployQue = [
     { label: "Regular Mode" },
@@ -26,7 +21,6 @@ const Mode: React.FC<ModeProps> = ({
 
   // Handle button click to set selected education level
   const handleSelection = (level: string) => {
-    setSelectedLevel(level); 
     Mode_data(level);
   };
 
@@ -54,11 +48,9 @@ const Mode: React.FC<ModeProps> = ({
             PREV
           </button>
           <button
-            className={`${
-              canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"
-            } text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
-            disabled={!canProceed}
-          >
+            className="cursor-not-allowed 
+            bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+        >
             Next
           </button>
       </div>

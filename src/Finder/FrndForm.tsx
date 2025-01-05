@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
   interface FrndFormProps {
     onButtonClick: (param: string) => void;
+    Form_sub: (param: string) => void;
     data: string;
   }
   
   const FrndForm: React.FC<FrndFormProps> = ({
     onButtonClick,
+    Form_sub,
     data
   }) => {
     const bhandleClick = () => {
@@ -54,6 +54,8 @@ import { Link } from "react-router-dom";
     if (validateForm()) {
       alert("Form submitted successfully!");
       console.log(formData);
+      const jsonData = JSON.stringify(formData);
+        Form_sub(jsonData);
     }
   };
 

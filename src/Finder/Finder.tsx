@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import  { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import FormSubmission from "./FormSubmission";
 import ReffFrnd from "./ReffFrnd";
@@ -46,7 +46,6 @@ class Stack {
 
 
 function Finder() {
-  const [back_v, setback_v] = useState<string>("");
   const back_stack = useRef(new Stack());
    
   
@@ -114,28 +113,28 @@ function Finder() {
     }
 
     
-    const [Edu_Level, setEdu_Level] = useState<string>("");
+    const [Pick_Your_Level_Of_Education, setPick_Your_Level_Of_Education] = useState<string>("");
     const [LevelEdu, setLevelEdur] = useState<string>("t");
 
     function LevelEdu_sub(Lv: string) {
         if (Lv === "Completed10th") {
-           setEdu_Level("Completed10th");
+           setPick_Your_Level_Of_Education("Completed10th");
             setQuestionAnswered("t");
 
         } else if (Lv === "Completed12th") {
-          setEdu_Level("Completed12th");
+          setPick_Your_Level_Of_Education("Completed12th");
             setQuestionAnswered12("t");
 
         } else if (Lv === "CollegeGraduate") {
-          setEdu_Level("CollegeGraduate");
+          setPick_Your_Level_Of_Education("CollegeGraduate");
           setQuestionAnswered13("t");
 
         } else if (Lv === "Postgraduate") {
-          setEdu_Level("Postgraduate");
+          setPick_Your_Level_Of_Education("Postgraduate");
           setQuestionAnswered13("t");
 
         } else if (Lv === "DiplomaHolder") {
-          setEdu_Level("DiplomaHolder");
+          setPick_Your_Level_Of_Education("DiplomaHolder");
           setQuestionAnswered13("t");
 
         } else {
@@ -147,27 +146,21 @@ function Finder() {
 
     //Score10th************************************
 
-    const [Question1, setQuestion1] = useState<string>("n");
-  const [Question2, setQuestion2] = useState<string>("n");
-  const [Question3, setQuestion3] = useState<string>("n");
+
+  const [marks, setmarks] = useState<string>("");
 
   const [QuestionAnswered, setQuestionAnswered] = useState<string>("f");
 
   function handleQuestionSelection(question: string) {
-    if (question === "Question1") {
-      setQuestion1("y");
-      setQuestion2("n");
-      setQuestion3("n");
+    setmarks(question);
+    if (question === "Below 50%") {
+      
       setCanProceed("t");
-    } else if (question === "Question2") {
-      setQuestion2("y");
-      setQuestion1("n");
-      setQuestion3("n");
+    } else if (question === "50% - 80%") {
+      
       setCanProceed("t");
-    } else if (question === "Question3") {
-      setQuestion3("y");
-      setQuestion1("n");
-      setQuestion2("n");
+    } else if (question === "Above 80%") {
+  
       setCanProceed("t");
     } else {
       console.error("Invalid question selection");
@@ -178,13 +171,14 @@ function Finder() {
     //Score12th************************************
 
   const [QuestionAnswered12, setQuestionAnswered12] = useState<string>("f");
-
+  
   function handleQuestionSelection12(question: string) {
-    if (question === "Question1") {
+    setmarks(question);
+    if (question === "Below 50%") {
       setCanProceed("t");
-    } else if (question === "Question2") {
+    } else if (question === "50% - 80%") {
       setCanProceed("t");
-    } else if (question === "Question3") {
+    } else if (question === "Above 80%") {
       setCanProceed("t");
     } else {
       console.error("Invalid question selection");
@@ -198,11 +192,12 @@ function Finder() {
   const [QuestionAnswered13, setQuestionAnswered13] = useState<string>("f");
 
   function handleQuestionSelection13(question: string) {
-    if (question === "Question1") {
+    setmarks(question);
+    if (question === "Below 50%") {
       setCanProceed("t");
-    } else if (question === "Question2") {
+    } else if (question === "50% - 80%") {
       setCanProceed("t");
-    } else if (question === "Question3") {
+    } else if (question === "Above 80%") {
       setCanProceed("t");
     } else {
       console.error("Invalid question selection");
@@ -213,32 +208,25 @@ function Finder() {
 
   //AdmissionQues10th *********************
 
-  const [Yes, setYes] = useState<string>("n");
-  const [No, setNo] = useState<string>("n");
+
+  const [Are_you_looking_for_Admission, setAre_you_looking_for_Admission] = useState<string>("");
   const [canProceed, setCanProceed] = useState<string>("f");
 
   function handleSelection(option: string) {
+    setAre_you_looking_for_Admission(option);
     const last_v = back_stack.current.peek();
     if(last_v == "score10th"){
       if (option === "Yes") {
-        setYes("y");
-        setNo("n");
         setCourse10th("t")
       } else if (option === "No") {
-        setNo("y");
-        setYes("n");
         setAdmissionTaken("t")
       }
     }
     else {
       if (option === "Yes") {
-        setYes("y");
-        setNo("n");
         setMode_("t");
 
       } else if (option === "No") {
-        setNo("y");
-        setYes("n");
         setAdmissionTaken("t")
       }
     }
@@ -249,19 +237,15 @@ function Finder() {
 
   //Course10th *****************************************
 
-  const [Polytechnic, setPolytechnic] = useState<string>("n");
-  const [Other, setOther] = useState<string>("n");
+  const [Course_in_10th, setCourse_in_10th] = useState<string>("");
 
   const [Course10th, setCourse10th] = useState<string>("f");
 
   function Course10th_sub(option: string) {
+    setCourse_in_10th(option);
     if (option === "Polytechnic") {
-      setPolytechnic("y");
-      setOther("n");
       setBudgetSelected("t");
     } else if (option === "Other") {
-      setOther("y");
-      setPolytechnic("n");
       setBudgetSelected("t");
     }
     setCourse10th("f");
@@ -270,18 +254,14 @@ function Finder() {
 
   //AdmissionTaken***********************************
 
-  const [adm_Yes, setAdm_Yes] = useState<string>("n");
-  const [adm_No, setAdm_No] = useState<string>("n");
+  const [Have_you_taken_Admission, setHave_you_taken_Admission] = useState<string>("");
   const [AdmissionTaken, setAdmissionTaken] = useState<string>("f");
 
   function AdmissionTaken_sub(option: string) {
+    setHave_you_taken_Admission(option);
     if (option === "adm_Yes") {
-      setAdm_Yes("y");
-      setAdm_No("n");
       setReffFrnd_("t");
     } else if (option === "adm_No") {
-      setAdm_No("y");
-      setAdm_Yes("n");
       setLevelEdur("t");
     }
     setAdmissionTaken("f");
@@ -290,15 +270,15 @@ function Finder() {
 
   //Budget************************************************
 
-  const [selected_Amount, setSelected_Amount] = useState<string>("");
+  const [Admission_Budget, setAdmission_Budget] = useState<string>("");
  const [BudgetSelected, setBudgetSelected] = useState<string>("f");
 
   function handleBudgetSelection(option: string) {
-    setSelected_Amount("option");
-    if(Edu_Level == "Completed10th"){
+    setAdmission_Budget(option);
+    if(Pick_Your_Level_Of_Education == "Completed10th"){
       setFormSub("t");
     }
-    if(Edu_Level != "Completed10th"){
+    if(Pick_Your_Level_Of_Education != "Completed10th"){
       setEMI_("t");
     }
     
@@ -316,6 +296,7 @@ if(FormSub === "t"){
 }
 
 
+const [Would_you_like_to_refer_your_friend, setWould_you_like_to_refer_your_friend] = useState<string>("");
 const [ReffFrnd_, setReffFrnd_] = useState<string>("f");
 let prevState2 = null;
 if(ReffFrnd_ === "t"){
@@ -323,6 +304,7 @@ if(ReffFrnd_ === "t"){
   
 }
 function ReffFr_d(da: string){
+  setWould_you_like_to_refer_your_friend(da);
   if(da === "Yes"){
     setFrndForm_("t");
     setReffFrnd_("f");
@@ -335,6 +317,7 @@ function ReffFr_d(da: string){
   back_stack.current.push("ReffFrnd");
 }
 //******Mode*************************************************** */
+const [Admission_Mode, setAdmission_Mode] = useState<string>("");
 const [Mode_, setMode_] = useState<string>("f");
 let prevState5 = null;
 if(Mode_ === "t"){
@@ -342,6 +325,7 @@ if(Mode_ === "t"){
   
 }
 function Mode_d(da: string){
+  setAdmission_Mode(da);
   if(da === "Regular Mode"){
    setRegularMode_("t"); 
   }
@@ -353,6 +337,7 @@ function Mode_d(da: string){
 }
 
 //******OnlineMode*************************************************** */
+const [OnlineAdmission_Mode, setOnlineAdmission_Mode] = useState<string>("");
 const [OnlineMode_, setOnlineMode_] = useState<string>("f");
 let prevState8 = null;
 if(OnlineMode_ === "t"){
@@ -360,6 +345,7 @@ if(OnlineMode_ === "t"){
   
 }
 function OnlineMode_d(da: string){
+  setOnlineAdmission_Mode(da);
   if(da === "Regular Mode"){
 
   }
@@ -372,6 +358,7 @@ function OnlineMode_d(da: string){
 }
 
 //******EMI*************************************************** */
+const [EMI_v, setEMI_v] = useState<string>("");
 const [EMI_, setEMI_] = useState<string>("f");
 let prevState7 = null;
 if(EMI_ === "t"){
@@ -379,6 +366,7 @@ if(EMI_ === "t"){
   
 }
 function EMI_d(da: string){
+  setEMI_v(da);
   if(da === "Yes"){
 
   }
@@ -391,6 +379,7 @@ function EMI_d(da: string){
 }
 
 //******RegularMode*************************************************** */
+const [RegularAdmission_Mode, setRegularAdmission_Mode] = useState<string>("");
 const [RegularMode_, setRegularMode_] = useState<string>("f");
 let prevState6 = null;
 if(RegularMode_ === "t"){
@@ -398,6 +387,7 @@ if(RegularMode_ === "t"){
   
 }
 function RegularMode_d(da: string){
+  setRegularAdmission_Mode(da);
   if(da === "Yes"){
    
   }
@@ -424,11 +414,50 @@ if(Brand_FormSub === "t"){
    prevState4 = back_stack.current.pop();
   
 }
+
+function Form_sub(jsonD: string) {
+  const variables = {
+    Pick_Your_Level_Of_Education,
+    marks,
+    Are_you_looking_for_Admission,
+    Course_in_10th,
+    Have_you_taken_Admission,
+    Admission_Budget,
+    Would_you_like_to_refer_your_friend,
+    Admission_Mode,
+    OnlineAdmission_Mode,
+    EMI_v,
+    RegularAdmission_Mode,
+  };
+
+  // Filter out keys with empty values
+  const filteredObject = Object.fromEntries(
+    Object.entries(variables).filter(([_, value]) => value !== "")
+  );
+
+  // Parse jsonD if it's a JSON string
+  let parsedJsonD;
+  try {
+    parsedJsonD = JSON.parse(jsonD); // Parse jsonD into an object
+  } catch (error) {
+    console.error("Invalid JSON string provided in jsonD:", error);
+    return;
+  }
+
+  // Merge objects
+  const mergedData = { ...filteredObject, ...parsedJsonD };
+
+  // Convert the merged object back to JSON if needed
+  const finalJson = JSON.stringify(mergedData);
+
+  console.log( finalJson);
+}
+
   
   return (
     <>
     <div className={FormSub === "f" ? "hidden" : "block"}>
-      <FormSubmission onButtonClick={backto} data={prevState}/>
+      <FormSubmission onButtonClick={backto} Form_sub={Form_sub} data={prevState}/>
     </div>
 
     <div className={ReffFrnd_ === "f" ? "hidden" : "block"}>
@@ -452,14 +481,14 @@ if(Brand_FormSub === "t"){
     </div>
 
     <div className={FrndForm_ === "f" ? "hidden" : "block"}>
-      <FrndForm onButtonClick={backto} data={prevState3}/>
+      <FrndForm onButtonClick={backto} Form_sub={Form_sub} data={prevState3}/>
     </div>
 
     <div className={Brand_FormSub === "f" ? "hidden" : "block"}>
     <div className="flex items-center justify-center m-10 h-[300px] bg-[#EDEDE9]">
       <div className="w-full">
        <h1 className="text-4xl font-bold text-gray-800 mb-6 pt-[100px] text-center">Become a Brand Ambassador of Your Campus!</h1>
-       <FormSubmission onButtonClick={backto} data={prevState4} showHeader={false} showCourse={false} showState ={false}/>
+       <FormSubmission onButtonClick={backto} Form_sub={Form_sub} data={prevState4} showHeader={false} showCourse={false} showState ={false}/>
       </div>
      </div>
     </div>
@@ -536,7 +565,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection("Question1")}
+          onClick={() => handleQuestionSelection("Below 50%")}
         >
           Below 50%
         </button>
@@ -544,7 +573,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection("Question2")}
+          onClick={() => handleQuestionSelection("50% - 80%")}
         >
           50% - 80%
         </button>
@@ -552,7 +581,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection("Question3")}
+          onClick={() => handleQuestionSelection("Above 80%")}
         >
          Above 80%
         </button>
@@ -586,7 +615,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection12("Question1")}
+          onClick={() => handleQuestionSelection12("Below 50%")}
         >
           Below 50%
         </button>
@@ -594,7 +623,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection12("Question2")}
+          onClick={() => handleQuestionSelection12("50% - 80%")}
         >
           50% - 80%
         </button>
@@ -602,7 +631,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection12("Question3")}
+          onClick={() => handleQuestionSelection12("Above 80%")}
         >
          Above 80%
         </button>
@@ -636,7 +665,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection13("Question1")}
+          onClick={() => handleQuestionSelection13("Below 50%")}
         >
           Below 50%
         </button>
@@ -644,7 +673,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection13("Question2")}
+          onClick={() => handleQuestionSelection13("50% - 80%")}
         >
           50% - 80%
         </button>
@@ -652,7 +681,7 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleQuestionSelection13("Question3")}
+          onClick={() => handleQuestionSelection13("Above 80%")}
         >
          Above 80%
         </button>
@@ -821,35 +850,35 @@ if(Brand_FormSub === "t"){
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleBudgetSelection("Less_1L")}
+          onClick={() => handleBudgetSelection("Less than 1 Lacs")}
         >
           Less than 1 Lacs
         </button>
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleBudgetSelection("1_2_5L")}
+          onClick={() => handleBudgetSelection("1 Lacs - 2.5 Lacs")}
         >
           1 Lacs - 2.5 Lacs
         </button>
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleBudgetSelection("2_5_4_2L")}
+          onClick={() => handleBudgetSelection("2.5 Lacs - 4.2 Lacs")}
         >
           2.5 Lacs - 4.2 Lacs
         </button>
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleBudgetSelection("4_2_6L")}
+          onClick={() => handleBudgetSelection("4.2 Lacs - 6 Lacs")}
         >
           4.2 Lacs - 6 Lacs
         </button>
         <button
           className="bg-white text-gray-800
           border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
-          onClick={() => handleBudgetSelection("Above_6L")}
+          onClick={() => handleBudgetSelection("Above 6 Lacs")}
         >
           Above 6 Lacs
         </button>

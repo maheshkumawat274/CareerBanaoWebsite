@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 
 
 interface RegularModeProps {
@@ -16,9 +14,6 @@ const RegularMode: React.FC<RegularModeProps> = ({
   const bhandleClick = () => {
     onButtonClick(data); // Access onButtonClick and data directly
   };
-  const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
-  const [canProceed, setCanProceed] = useState<boolean>(false);
-
   // Array of education levels
   const educationLevels = [
     { label: "Engineering", },
@@ -30,8 +25,6 @@ const RegularMode: React.FC<RegularModeProps> = ({
 
   // Handle button click to set selected education level
   const handleSelection = (level: string) => {
-    setSelectedLevel(level);
-     // Enable the "Next" button when an option is selected
     RegularMode_data(level);
   };
 
@@ -61,11 +54,9 @@ const RegularMode: React.FC<RegularModeProps> = ({
           </button>
           
           <button
-            className={`${
-              canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"
-            } text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
-            disabled={!canProceed}
-          >
+            className="cursor-not-allowed 
+            bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+        >
             Next
           </button>
       </div>

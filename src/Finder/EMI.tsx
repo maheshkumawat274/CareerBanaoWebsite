@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 interface EMIProps {
   onButtonClick: (param: string) => void;
@@ -14,9 +13,6 @@ const EMI: React.FC<EMIProps> = ({
   const bhandleClick = () => {
     onButtonClick(data); // Access onButtonClick and data directly
   };
-  const [selectedEMI, setSelectedEMI] = useState<string | null>(null);
-  const [canProceed, setCanProceed] = useState<boolean>(false);
-
   // Array of education EMIs
   const EmployQue = [
     { label: "Yes"},
@@ -25,7 +21,6 @@ const EMI: React.FC<EMIProps> = ({
 
   // Handle button click to set selected education EMI
   const handleSelection = (EMI: string) => {
-    setSelectedEMI(EMI);
     EMI_data(EMI);
   };
 
@@ -47,18 +42,16 @@ const EMI: React.FC<EMIProps> = ({
           </button>
         ))}
       </div>
-      <div className="mt-5 flex gap-2">\
+      <div className="mt-5 flex gap-2">
           <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
           onClick={bhandleClick}
           >
             PREV
           </button>
           <button
-            className={`${
-              canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"
-            } text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
-            disabled={!canProceed}
-          >
+            className="cursor-not-allowed 
+            bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+        >
             Next
           </button>
       </div>
