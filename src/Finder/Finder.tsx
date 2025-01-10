@@ -502,14 +502,14 @@ function Form_sub(jsonD: string) {
           
           <button 
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => LevelEdu_sub("Completed10th")}
           >
             Completed 10th
           </button>
           <button 
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => LevelEdu_sub("Completed12th")}
           >
             Completed 12th
@@ -517,7 +517,7 @@ function Form_sub(jsonD: string) {
 
           <button 
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => LevelEdu_sub("CollegeGraduate")}
           >
             College Graduate
@@ -525,7 +525,7 @@ function Form_sub(jsonD: string) {
 
           <button 
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => LevelEdu_sub("Postgraduate")}
           >
             Postgraduate
@@ -533,7 +533,7 @@ function Form_sub(jsonD: string) {
 
           <button 
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => LevelEdu_sub("DiplomaHolder")}
           >
             Diploma Holder
@@ -541,14 +541,14 @@ function Form_sub(jsonD: string) {
         </div>
         <div className="mt-5 flex gap-2">
           <Link to="/CollegeFinder">
-            <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
+            <button className="bg-purple-700  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500 hover:text-white transition duration-300">
               PREV
             </button>
           </Link>
 
           <button
             className="cursor-not-allowed 
-              bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+              bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500 hover:text-white transition duration-300"
           >
             Next
           </button>
@@ -564,7 +564,7 @@ function Form_sub(jsonD: string) {
       <div className="flex flex-wrap justify-center gap-6 mb-6 mt-5">
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection("Below 50%")}
         >
           Below 50%
@@ -572,7 +572,7 @@ function Form_sub(jsonD: string) {
 
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection("50% - 80%")}
         >
           50% - 80%
@@ -580,14 +580,14 @@ function Form_sub(jsonD: string) {
 
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection("Above 80%")}
         >
          Above 80%
         </button>
       </div>
       <div className="mt-5 flex gap-2">
-          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          <button className="bg-purple-700 text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => {
             const prevState = back_stack.current.pop();
             if (prevState) backto(prevState);
@@ -597,7 +597,7 @@ function Form_sub(jsonD: string) {
           </button>
         <button
           className="cursor-not-allowed 
-          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
       >
           NEXT
         </button>
@@ -614,7 +614,7 @@ function Form_sub(jsonD: string) {
       <div className="flex flex-wrap justify-center gap-6 mb-6 mt-5">
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection12("Below 50%")}
         >
           Below 50%
@@ -622,7 +622,7 @@ function Form_sub(jsonD: string) {
 
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection12("50% - 80%")}
         >
           50% - 80%
@@ -630,14 +630,14 @@ function Form_sub(jsonD: string) {
 
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection12("Above 80%")}
         >
          Above 80%
         </button>
       </div>
       <div className="mt-5 flex gap-2">
-          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          <button className="bg-purple-700 text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => {
             const prevState = back_stack.current.pop();
             if (prevState) backto(prevState);
@@ -647,7 +647,7 @@ function Form_sub(jsonD: string) {
           </button>
         <button
           className="cursor-not-allowed 
-          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
       >
           NEXT
         </button>
@@ -664,7 +664,7 @@ function Form_sub(jsonD: string) {
       <div className="flex flex-wrap justify-center gap-6 mb-6 mt-5">
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection13("Below 50%")}
         >
           Below 50%
@@ -672,7 +672,7 @@ function Form_sub(jsonD: string) {
 
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection13("50% - 80%")}
         >
           50% - 80%
@@ -680,14 +680,14 @@ function Form_sub(jsonD: string) {
 
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleQuestionSelection13("Above 80%")}
         >
          Above 80%
         </button>
       </div>
       <div className="mt-5 flex gap-2">
-          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          <button className="bg-purple-700 text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => {
             const prevState = back_stack.current.pop();
             if (prevState) backto(prevState);
@@ -697,7 +697,7 @@ function Form_sub(jsonD: string) {
           </button>
         <button
           className="cursor-not-allowed 
-          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
        >
           NEXT
         </button>
@@ -715,14 +715,14 @@ function Form_sub(jsonD: string) {
       <div className="flex flex-wrap justify-center gap-4 mb-6 mt-5">
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
            onClick={() => handleSelection("Yes")}
         >
           Yes
         </button>
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleSelection("No")}
         >
           No
@@ -730,8 +730,8 @@ function Form_sub(jsonD: string) {
       </div>
       <div className="mt-5 flex gap-2">
           <button
-            className="bg-[#1F618D] text-white
-            border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+            className="bg-purple-700 text-white
+            border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
             onClick={() => {
               const prevState = back_stack.current.pop();
               if (prevState) backto(prevState);
@@ -741,7 +741,7 @@ function Form_sub(jsonD: string) {
           </button>
         <button
           className="cursor-not-allowed 
-          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
       >
           NEXT
         </button>
@@ -757,14 +757,14 @@ function Form_sub(jsonD: string) {
       <div className="flex flex-wrap justify-center gap-4 mb-6 mt-5">
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => Course10th_sub("Polytechnic")}
         >
           Polytechnic
         </button>
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => Course10th_sub("Other")}
         >
           Other
@@ -772,8 +772,8 @@ function Form_sub(jsonD: string) {
       </div>
       <div className="mt-5 flex gap-2">
           <button
-            className="bg-[#1F618D] text-white
-            border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+            className="bg-purple-700 text-white
+            border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
             onClick={() => {
               const prevState = back_stack.current.pop();
               if (prevState) backto(prevState);
@@ -784,7 +784,7 @@ function Form_sub(jsonD: string) {
         
         <button
             className="cursor-not-allowed 
-            bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+            bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
         >
             Next
           </button>
@@ -803,23 +803,23 @@ function Form_sub(jsonD: string) {
       <div className="flex flex-wrap justify-center gap-4 mb-6 mt-5">
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => AdmissionTaken_sub("adm_Yes")}
         >
           Yes
         </button>
         <button
          className="bg-white text-gray-800
-         border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+         border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
          onClick={() => AdmissionTaken_sub("adm_No")}
         >
           No
         </button>
       </div>
       <div className="mt-5 flex gap-2">
-          <button className="bg-[#1F618D] text-white 
+          <button className="bg-purple-700 text-white 
           border font-bold border-gray-300 py-2 px-[50px] rounded-lg 
-          hover:bg-[#F89A00] hover:text-white transition duration-300"
+          hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => {
             const prevState = back_stack.current.pop();
             if (prevState) backto(prevState);
@@ -830,7 +830,7 @@ function Form_sub(jsonD: string) {
         
         <button
             className="cursor-not-allowed 
-            bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+            bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
         >
             Next
           </button>
@@ -849,42 +849,42 @@ function Form_sub(jsonD: string) {
       <div className="flex flex-wrap justify-center gap-6 mb-6 mt-5">
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleBudgetSelection("Less than 1 Lacs")}
         >
           Less than 1 Lacs
         </button>
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleBudgetSelection("1 Lacs - 2.5 Lacs")}
         >
           1 Lacs - 2.5 Lacs
         </button>
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleBudgetSelection("2.5 Lacs - 4.2 Lacs")}
         >
           2.5 Lacs - 4.2 Lacs
         </button>
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleBudgetSelection("4.2 Lacs - 6 Lacs")}
         >
           4.2 Lacs - 6 Lacs
         </button>
         <button
           className="bg-white text-gray-800
-          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => handleBudgetSelection("Above 6 Lacs")}
         >
           Above 6 Lacs
         </button>
       </div>
       <div className="mt-5 flex gap-2">
-          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          <button className="bg-purple-700 text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
           onClick={() => {
             const prevState = back_stack.current.pop();
             if (prevState) backto(prevState);
@@ -895,7 +895,7 @@ function Form_sub(jsonD: string) {
           </button>
         <button
           className="cursor-not-allowed 
-          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+          bg-gray-400  text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-pink-500  hover:text-white transition duration-300"
       >
           NEXT
         </button>
