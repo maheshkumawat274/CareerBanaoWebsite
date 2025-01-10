@@ -1,3 +1,4 @@
+
 .custom-video {
   height: 70vh; /* Full height on larger screens */
   object-fit: cover; /* Ensures video covers the container */
@@ -19,5 +20,15 @@
   }
   .custom-text p{
     font-size: 13px;
+  }
+}
+@media (min-width:1114px) and (max-width:2000px){
+  .custom-video{
+    height:520px;
+  }
+}
+@media (min-width:1000px) and (max-width:1100px){
+  .custom-video{
+    height:520px;
   }
 }

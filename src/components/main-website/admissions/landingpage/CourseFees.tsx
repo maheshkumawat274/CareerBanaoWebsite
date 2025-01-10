@@ -6,6 +6,16 @@ type Course = {
   duration: string;
 };
 
+
+const aboutData = [
+  {
+    title: "Sanskriti University Mathura Courses and Fees 2024",
+    description:
+      "Sanskriti University Mathura fees range from Rs 30000 to Rs 1,70,000 per year, depending on the degree level, duration and specialization of the course. The college offers 105 courses at Diploma, UG, PG and doctoral level. The university offers 12 courses in B.Tech, 11 courses in BSc at the UG level. At the PG level, the students can choose a wide range of specializations - 10 courses in MBA, 6 course in MSc. Admission to Sanskriti University Mathura courses ar done on merit basis and entrance basis. Scores of AILET, LSAT, NIMCET, MAT, CAT, CUET, JEE Main etc. are accepted by Sanskriti University Mathura for admission. ",
+    feeStructureTitle: "Sanskriti University Mathura Fee Structure 2024",
+  }
+];
+
 const courses: Course[] = [
   { name: "Diploma", fees: "Rs 42,000 - 90,000", duration: "2 - 3.6 Years" },
   { name: "D Pharma", fees: "Rs 1,00,000", duration: "2 Years" },
@@ -29,10 +39,21 @@ const CourseFees: React.FC = () => {
   const visibleCourses = showAll ? courses : courses.slice(0, 5);
 
   return (
-    <div className="max-w-4xl mx-auto mt-8 p-4">
-      <h1 className="text-2xl font-bold text-center mb-6">
-        Sanskriti University Mathura Fee Structure 2024
-      </h1>
+    <div className="px-4 sm:px-8 bg-[#EDEDE9] mt-4">
+    <div className="w-full mt-8 p-4 shadow-md">
+     {aboutData.map((aboutItem, index) => (
+          <div key={index}>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">{aboutItem.title}</h2>
+            <p
+              className="text-gray-700 text-lg"
+              dangerouslySetInnerHTML={{
+                __html: `${aboutItem.description}`,
+              }}
+            />
+            <h1 className="text-2xl font-semibold text-gray-800 mb-6 pt-4">{aboutItem.feeStructureTitle}</h1>
+          </div>
+        ))}
+      <div className="overflow-x-auto">
       <table className="w-full border border-gray-300">
         <thead>
           <tr className="bg-gray-100">
@@ -56,16 +77,18 @@ const CourseFees: React.FC = () => {
           ))}
         </tbody>
       </table>
+      </div>
 
       {/* View More/View Less Button */}
-      <div className="text-center mt-4">
+      <div className="mt-4">
         <button
           onClick={toggleView}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="text-blue-500 font-semibold mt-2"
         >
           {showAll ? "View Less" : "View More"}
         </button>
       </div>
+    </div>
     </div>
   );
 };

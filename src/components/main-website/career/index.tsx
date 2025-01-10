@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import "./career.css"
 import CurrentOpening from "./CurrentOpening";
@@ -14,7 +15,8 @@ const Career = () => {
       <JoinUs/>
       <CurrentOpening/>
       <Link to={'/UniversityLandingPage'}>
-      <button className="bg-slate-500">landing page</button></Link>
+      <button className="bg-slate-500">landing page</button>
+      </Link>
     </div>
   );
 

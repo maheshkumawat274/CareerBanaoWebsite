@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -15,7 +16,7 @@ const Score10th = () => {
   // Handle button click to set selected score10th range
   const handleSelection = (score10th: string) => {
     setSelectedScore10th(score10th);
-    setCanProceed(true); 
+    setCanProceed(true); // Enable the "Next" button when an option is selected
   };
 
   return (
@@ -23,14 +24,14 @@ const Score10th = () => {
       <h1 className="text-4xl font-bold text-gray-800 mb-6">
         What Was Your Score In 10th?
       </h1>
-      <div className="flex flex-wrap justify-center gap-4 mb-6 mt-5">
+      <div className="grid grid-cols-2 justify-center gap-4 mb-6 mt-5">
         {score10thRanges.map((score10th, index) => (
           <button
             key={index}
             onClick={() => handleSelection(score10th)}
             className={`${
               selectedScore10th === score10th ? "bg-[#F89A00] text-white" : "bg-white text-gray-800"
-            } border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
+            } border w-[150px] border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
           >
             {score10th}
           </button>
@@ -42,7 +43,7 @@ const Score10th = () => {
             PREV
           </button>
         </Link>
-        <Link to="/CollegeFinder/question10th">
+        <Link to="/question10th">
           <button
             className={`${
               canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"

@@ -1,4 +1,5 @@
 
+
 import FrndForm from 'src/components/main-website/collegefinder/FrndForm'
 
 const FrndFormPage = () => {

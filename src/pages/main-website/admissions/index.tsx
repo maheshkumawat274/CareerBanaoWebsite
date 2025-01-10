@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setData } from "src/redux/admissionCategorySlice";
 import { useEffect } from "react";
 import { menuConfig } from "src/utils/constants";
+// import { menuConfig } from "src/utils/constants";
 
 const Admissions = () => {
 
@@ -30,6 +31,7 @@ const Admissions = () => {
   else {
     navigate("/")
   }
+
 
 
   const [fetchData, loading] = useFetch(url, category);

@@ -13,7 +13,7 @@ import { CgProfile } from "react-icons/cg";
 let admissonItems= [
   {
     key: "1",
-    label: <Link to={"/admissions/engineering"}>Engineering</Link>,
+    label: <Link to={"/admissions"}>Engineering</Link>,
     title:menuConfig.admEng
   },
   {
@@ -114,7 +114,7 @@ const NavBar = () => {
               <Link to={"/"}>Home</Link>
             </li>
             <li>
-            <Link to={'/first'}>
+            <Link to={'/CollegeFinder'}>
              <button className="font-semibold px-3 rounded-lg border-2 hover:scale-105 transition-transform transform animate-border-color">
                College Finder
              </button>
@@ -257,7 +257,7 @@ function NavSlider({ handleNavSlider, handleLogout, dispatch, user }: any) {
           </Link>
         </li>
         <li>
-            <Link to={'/first'}>
+            <Link to={'/CollegeFinder'}>
             <button className="font-semibold px-3 rounded-lg border-2 hover:scale-105 transition-transform transform animate-border-color">
                College Finder
              </button>

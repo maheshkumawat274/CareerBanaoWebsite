@@ -147,7 +147,7 @@ const Footer = () => {
 
                 <Link
                   to="/contact"
-                  className="footer-call-to-action-button bg-primaryBtn hover:bg-hoverBtn shadow-[] hover:text-white text-white py-[12px] px-[30px] rounded-[45px]"
+                  className="footer-call-to-action-button shadow-[] hover:text-white text-white py-[12px] px-[30px] rounded-[45px]"
                   target="_self"
                 >
                   {" "}
@@ -202,7 +202,7 @@ const Footer = () => {
               </Link>
               <Link
                 className="footer-social-link youtube"
-                to=" https://youtube.com/c/CareerBanao"
+                to="https://www.youtube.com/@CareerBanao"
                 target="_blank"
               >
                 <YoutubeOutlined className="footer-icons"  

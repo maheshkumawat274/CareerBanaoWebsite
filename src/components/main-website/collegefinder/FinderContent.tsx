@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -29,7 +30,7 @@ const FinderContent: React.FC = () => {
               href="#"
               className="text-blue-500 hover:text-blue-700 font-medium"
             >
-              <Link to={'/CollegeFinder'}>Find College</Link>
+              <Link to={'/CollegeFinder'}>Learn More</Link>
             </a>
           </div>
 
@@ -48,13 +49,13 @@ const FinderContent: React.FC = () => {
               Budget-Friendly College Options
             </h3>
             <p className="text-gray-600 mb-4">
-              Choose colleges that fit within your budget. Explore scholarships, financial aid, and cost-effective options.
+            Choose colleges that fit within your budget, qualification, and location. Explore scholarships, financial aid, and cost-effective options to make an informed decision.
             </p>
             <a
               href="#"
-              className="text-blue-500 hover:text-blue-700 font-medium"
+              className="text-blue-500 hover:text-purple-700 font-medium"
             >
-              <Link to={'/CollegeFinder'}>Find College</Link>
+              <Link to={'/CollegeFinder'}>Learn More</Link>
             </a>
           </div>
         </div>

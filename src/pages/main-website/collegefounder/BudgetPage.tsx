@@ -1,3 +1,4 @@
+
 import Budget from 'src/components/main-website/collegefinder/Budget'
 const BudgetPage = () => {
   return (

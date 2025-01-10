@@ -61,10 +61,11 @@ const Section1 = () => {
     <div className="section1 font-poppins flex pb-[5rem]">
       {/* Section Container */}
       <div className="section-container font-popins relative top-[20px] flex flex-col lg:flex-row items-center justify-center">
+
         {/* Left Section */}
         <div className="section-left flex flex-col p-5 gap-6 justify-center w-full lg:w-[60%] text-center lg:text-left">
-          <h1 className="text-[2rem] lg:text-[3.2rem] font-bold leading-[1.2] text-blue-900">
-            Admission Dreams, <span className="text-primaryBtn">Crafted Realities</span>
+          <h1 className="text-[2rem] lg:text-[3.2rem] font-bold leading-[1.2] text-purple-700">
+            Admission Dreams, <span className="text-pink-500">Crafted Realities</span>
           </h1>
           <p className="text-[16px] lg:text-[1.4rem] mt-[1.5rem] text-gray-700 leading-relaxed">
             Dreaming of the perfect college or university? Let us turn those
@@ -73,19 +74,20 @@ const Section1 = () => {
           </p>
           <div className="mt-6">
             {/* <Link to={data ? (data as any)[0]?.whatsApp_link : ""} target="_blank">
+
+            <Link to={data ? (data as any)[0]?.whatsApp_link : ""} target="_blank">
               <button
                 type="button"
                 className="bg-primaryBtn hover:bg-hoverBtn transition-all duration-300 ease-in-out transform hover:scale-105 btn-shadow rounded-3xl h-[3rem] w-[12rem] text-white text-[16px] font-semibold shadow-lg"
               >
                 CHAT NOW
               </button>
-            </Link> */}
 
             {/*contact form add*/}
             <button
                 onClick={() => setShowForm(true)}
                 type="button"
-                className="bg-[#9940D4] px-4 p-2 hover:bg-[#E269B4] transition-all duration-300 ease-in-out transform hover:scale-105 btn-shadow rounded-3xl text-white text-[16px] font-semibold shadow-lg"
+                className="border-2 border-purple-700 px-8 text-gray-700 p-2 hover:bg-purple-700 rounded-md hover:text-white text-[16px] font-semibold"
               >
                 Talk to College Expert
               </button>

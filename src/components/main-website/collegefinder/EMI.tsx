@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -7,8 +8,8 @@ const EMI = () => {
 
   // Array of education EMIs
   const EmployQue = [
-    { label: "Yes", path: "/CollegeFinder/formsub" },
-    { label: "No", path: "/CollegeFinder/formsub" }
+    { label: "Yes", path: "/formsub" },
+    { label: "No", path: "/formsub" }
   ];
 
   // Handle button click to set selected education EMI
@@ -41,7 +42,7 @@ const EMI = () => {
         ))}
       </div>
       <div className="mt-5 flex gap-2">
-        <Link to="/CollegeFinder/budget">
+        <Link to="/budget">
           <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
             PREV
           </button>

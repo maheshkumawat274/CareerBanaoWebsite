@@ -1,4 +1,5 @@
 
+
 import Course10th from 'src/components/main-website/collegefinder/10th/Course10th'
 
 const Course10thPage = () => {

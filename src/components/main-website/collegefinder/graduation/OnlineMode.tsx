@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -7,11 +8,11 @@ const OnlineMode = () => {
 
   // Array of education levels
   const educationLevels = [
-    { label: "Online BCA", path: "/CollegeFinder/budget" },
-    { label: "Online BBA", path: "/CollegeFinder/budget" },
-    { label: "Online BA", path: "/CollegeFinder/budget" },
-    { label: "Online B.Com", path: "/CollegeFinder/budget" },
-    { label: "Other", path: "/CollegeFinder/budget" }
+    { label: "Online BCA", path: "/budget" },
+    { label: "Online BBA", path: "/budget" },
+    { label: "Online BA", path: "/budget" },
+    { label: "Online B.Com", path: "/budget" },
+    { label: "Other", path: "/budget" }
   ];
 
   // Handle button click to set selected education level
@@ -30,21 +31,21 @@ const OnlineMode = () => {
       <h1 className="text-4xl font-bold text-gray-800 mb-6">
         Select Course
       </h1>
-      <div className="flex flex-wrap justify-center gap-4 mb-6 mt-5">
+      <div className="grid grid-cols-2 justify-center gap-4 mb-6 mt-5">
         {educationLevels.map((level, index) => (
           <button
             key={index}
             onClick={() => handleSelection(level.label)}
             className={`${
               selectedLevel === level.label ? "bg-[#F89A00] text-white" : "bg-white text-gray-800"
-            } border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
+            } border w-[150px] border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
           >
             {level.label}
           </button>
         ))}
       </div>
       <div className="mt-5 flex gap-2">
-        <Link to="/CollegeFinder/mode">
+        <Link to="/mode">
           <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
             PREV
           </button>

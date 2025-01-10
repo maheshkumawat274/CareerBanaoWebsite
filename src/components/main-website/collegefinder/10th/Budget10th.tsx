@@ -1,4 +1,5 @@
 
+
 import Budget from '../Budget'
 
 const Budget10th = () => {
@@ -12,10 +13,9 @@ const Budget10th = () => {
   return (
     <>
      <div>
-      <Budget budgetRanges={modifiedRanges} nextPath="/CollegeFinder/formsub" prevPath="/CollegeFinder/course10th"/>
+      <Budget budgetRanges={modifiedRanges} nextPath="/formsub" prevPath="/course10th"/>
      </div>
     </>
   )
 }
-
 export default Budget10th

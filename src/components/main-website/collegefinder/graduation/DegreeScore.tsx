@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -23,14 +24,14 @@ const DegreeScore = () => {
       <h1 className="text-4xl font-bold text-gray-800 mb-6">
         What Was Your Score In Last Degree??
       </h1>
-      <div className="flex flex-wrap justify-center gap-4 mb-6 mt-5">
+      <div className="grid grid-cols-2 justify-center gap-4 mb-6 mt-5">
         {DegreeRanges.map((Degree, index) => (
           <button
             key={index}
             onClick={() => handleSelection(Degree)}
             className={`${
               selectedDegree === Degree ? "bg-[#F89A00] text-white" : "bg-white text-gray-800"
-            } border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
+            } border w-[150px] border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
           >
             {Degree}
           </button>
@@ -42,7 +43,7 @@ const DegreeScore = () => {
             PREV
           </button>
         </Link>
-        <Link to="/CollegeFinder/degreequs">
+        <Link to="/degreequs">
           <button
             className={`${
               canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"
